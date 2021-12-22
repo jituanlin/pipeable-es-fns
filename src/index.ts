@@ -1,3 +1,6 @@
 export * as array from './array'
 export * as object from './object'
-export * as fn from './fn'
+export * as function_ from './function_'
+export * as map from './map'
+export * as set from './set'
+export * as weakMap from './weak-map'
