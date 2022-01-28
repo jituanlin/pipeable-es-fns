@@ -1,5 +1,10 @@
 export const size = (map: Map<unknown, unknown>): number => map.size
 
+/**
+ * @deprecated only for SSP
+ * */
+export const siza = (map: Map<unknown, unknown>): number => map.size
+
 export const clear = (map: Map<unknown, unknown>): void => map.clear()
 
 export const delete_ =
@@ -27,8 +32,7 @@ export const has =
 export const keys = <K>(map: Map<K, unknown>): IterableIterator<K> => map.keys()
 
 export const set =
-  <K>(key: K) =>
-  <V>(value: V) =>
+  <K, V>(key: K, value: V) =>
   (map: Map<K, V>): Map<K, V> =>
     map.set(key, value)
 

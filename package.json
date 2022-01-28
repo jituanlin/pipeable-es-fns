@@ -1,11 +1,22 @@
 {
-  "name": "curried-es-fns",
+  "name": "pipeable-es-fns",
   "version": "0.0.1",
-  "description": "Curried ES6+ util functions.",
-  "main": "index.js",
-  "author": "jituanlin",
-  "license": "MIT",
-  "private": false,
+  "description": "A opinionated pipeable ES6+ util functions.",
+  "tags": [
+    "typescript",
+    "ECMAScript",
+    "functional-programming"
+  ],
+  "keywords": [
+    "typescript",
+    "ECMAScript",
+    "functional-programming"
+  ],
+  "main": "lib/index.js",
+  "module": "es6/index.js",
+  "typings": "lib/index.d.ts",
+  "sideEffects": "false",
+  "dependencies": {},
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
@@ -14,5 +25,21 @@
     "eslint-plugin-import": "^2.25.3",
     "prettier": "^2.5.1",
     "typescript": "^4.5.4"
-  }
+  },
+  "scripts": {
+    "lint": "tslint -p .",
+    "jest-clear-cache": "jest --clearCache",
+    "prettier": "prettier --list-different \"./{src,test,examples,scripts}/**/*.ts\"",
+    "fix-prettier": "prettier --write \"./{src,test,examples,scripts}/**/*.ts\"",
+    "jest": "jest",
+    "test": "npm run lint && npm run prettier && npm run jest-clear-cache && npm run jest",
+    "clean": "rimraf ./dist",
+    "prebuild": "npm run clean",
+    "build": "tsc -p ./tsconfig.build.json && tsc -p ./tsconfig.build-es6.json",
+    "postbuild": "prettier --loglevel=silent --write \"./dist/**/*.ts\"",
+    "prerelease": "npm run build"
+  },
+  "author": "jituanlin",
+  "license": "MIT",
+  "private": false
 }

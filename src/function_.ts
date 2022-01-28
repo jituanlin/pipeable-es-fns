@@ -1,14 +1,5 @@
 export type Arrow<A extends any[] = any, B = any> = (...args: A) => B
 
-export const length = (fn: Arrow) => fn.length
-
-export const name = (fn: Arrow) => fn.name
-
-export const apply =
-  <A extends any[]>(args: A) =>
-  <R>(fn: Arrow<A, R>): R =>
-    fn(...args)
-
 export function pipe<A>(a: A): A
 export function pipe<A, B>(a: A, ab: (a: A) => B): B
 export function pipe<A, B, C>(a: A, ab: (a: A) => B, bc: (b: B) => C): C

@@ -11,11 +11,9 @@ export const every =
     array.every(predicate)
 
 export const fill =
-  (start: number) =>
-  (end: number) =>
   <T>(value: T) =>
   (array: T[]): T[] =>
-    array.fill(value, start, end)
+    array.fill(value)
 
 export const filter =
   <T>(predicate: (element: T) => boolean) =>
@@ -47,17 +45,15 @@ export const forEach =
   (array: T[]): void =>
     array.forEach(callbackfn)
 
-export const from = Array.from.bind(Array)
+export const from = Array.from
 
 export const includes =
-  (fromIndex: number) =>
   <T>(searchElement: T) =>
   (array: T[]): boolean =>
-    array.includes(searchElement, fromIndex)
+    array.includes(searchElement)
 
 export const indexOf =
-  (fromIndex: number) =>
-  <T>(searchElement: T) =>
+  <T>(searchElement: T, fromIndex = 0) =>
   (array: T[]): number =>
     array.indexOf(searchElement, fromIndex)
 
@@ -75,7 +71,7 @@ export const map =
   (array: T[]) =>
     array.map(callbackfn)
 
-export const of = Array.of.bind(Array)
+export const of = Array.of
 
 export const pop = <T>(array: T[]): T | undefined => array.pop()
 
@@ -101,8 +97,7 @@ export const reverse = <T>(array: T[]): T[] => array.reverse()
 export const shift = <T>(array: T[]): T | undefined => array.shift()
 
 export const slice =
-  (start: number) =>
-  (end: number) =>
+  (start: number, end: number) =>
   <T>(array: T[]): T[] =>
     array.slice(start, end)
 
@@ -111,14 +106,10 @@ export const some =
   (array: T[]): boolean =>
     array.some(predicate)
 
-export const sort =
-  <T>(compareFn?: (a: T, b: T) => number) =>
-  (array: T[]): T[] =>
-    array.sort(compareFn)
+export const sort = <T>(array: T[]): T[] => array.sort()
 
 export const splice =
-  (start: number) =>
-  (deleteCount: number) =>
+  (start: number, deleteCount: number) =>
   <T>(...items: T[]) =>
   (array: T[]): T[] =>
     array.splice(start, deleteCount, ...items)
