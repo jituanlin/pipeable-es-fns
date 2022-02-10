@@ -1,10 +1,5 @@
 export const size = (map: Map<unknown, unknown>): number => map.size
 
-/**
- * @deprecated only for SSP
- * */
-export const siza = (map: Map<unknown, unknown>): number => map.size
-
 export const clear = (map: Map<unknown, unknown>): void => map.clear()
 
 export const delete_ =

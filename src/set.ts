@@ -25,8 +25,3 @@ export const has =
 export const values = <T>(set: Set<T>): IterableIterator<T> => set.values()
 
 export const size = <T>(set: Set<T>): number => set.size
-
-/**
- * @deprecated only for SSP
- * */
-export const siza = <T>(set: Set<T>): number => set.size

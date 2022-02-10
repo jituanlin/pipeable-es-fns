@@ -1,5 +1,4 @@
-import { array, object } from '../src'
-import { pipe } from '../src/function_'
+import { array, object, pipe } from '../src'
 
 const _a = pipe(
   [1, 2, 3],
