@@ -39,6 +39,7 @@
     "prerelease": "npm run build"
   },
   "author": "jituanlin",
+  "repository": "https://github.com/jituanlin/pipeable-es-fns",
   "license": "MIT",
   "private": false
 }
